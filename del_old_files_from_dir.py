@@ -4,7 +4,7 @@ from datetime import datetime, timedata
 
 root_folder = Path('path goes here')
 
-def remove_old_files(root: Path):   # above 90 days
+def remove_old_files(root: Path):
     for dir in root.iterdir():
         for file in dir.glob('**/*.txt'):   # TODO: improve glob pattern
             file_created_date = datetime.fromtimestamp(os.path.getmtime(file))
